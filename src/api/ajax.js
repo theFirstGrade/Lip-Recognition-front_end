@@ -63,9 +63,12 @@ export default function ajax(url, data = {}, type = 'GET') {
         // 1. 执行异步ajax请求
         if (type === 'GET') { // 发GET请求
             promise = axios.get(url, { // 配置对象
-                params: data // 指定请求参数
+                params: data // 指定请求参数,
             })
-        } else { // 发POST请求
+        } else if (type === 'bPOST') { // 发POST请求
+            console.log(22222222222222222)
+            promise = axios.post(url, data, {responseType: "blob"})
+        } else {
             promise = axios.post(url, data)
         }
         // 2. 如果成功了, 调用resolve(value)

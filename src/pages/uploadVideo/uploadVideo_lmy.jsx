@@ -1,18 +1,4 @@
 import React, {Component} from "react";
-//
-// export default class UploadVideo extends Component {
-//
-//     render() {
-//         console.log(123)
-//
-//         return (
-//             <div style={{margin: '0 auto', width:' 30%'}}>
-//                 upload Video
-//             </div>
-//         );
-//     }
-// }
-
 import {Upload, Button, message} from 'antd';
 import {UploadOutlined} from '@ant-design/icons';
 import {fileUpload, reqLogin} from "../../api";
@@ -27,18 +13,18 @@ export default class UploadVideo extends React.Component {
         const {fileList} = this.state;
         const formData = new FormData();
         fileList.forEach(file => {
-            formData.append('files[]', file);
+            formData.append('file', file);
         });
         this.setState({
             uploading: true,
         });
 
-        const result = await fileUpload(this.state.fileList[0].name, 'POST')
+        const result = await fileUpload(formData, 'POST')
         if (result.code === 200) {
             this.setState({
                 uploading: false,
             })
-            message.success('success')
+            message.success('success Upload ' + this.state.fileList[0].name)
         } else {
             message.error('error')
         }
@@ -47,6 +33,8 @@ export default class UploadVideo extends React.Component {
     render() {
         const {uploading, fileList} = this.state;
         const props = {
+            accept:".mp4",
+            maxCount: 0,
             onRemove: file => {
                 this.setState(state => {
                     const index = state.fileList.indexOf(file);
@@ -61,6 +49,9 @@ export default class UploadVideo extends React.Component {
                 this.setState(state => ({
                     fileList: [...state.fileList, file],
                 }));
+                if(fileList.length>=1){
+                    message.error('Only ONE Video accepted')
+                }
                 return false;
             },
             fileList,
@@ -68,7 +59,18 @@ export default class UploadVideo extends React.Component {
 
         return (
             <>
-                <Upload {...props}>
+                <div style={{margin: '20px auto', width: '30%'}}>
+                    <span>
+                    Please Select Your Video of Speaking.
+                    </span></div>
+                <div align = 'center'>
+                    <span style ={{color:'red'}}>
+                    Note: Only .mp4 is accepted
+                    </span>
+                </div>
+
+                <div align = 'center'>
+                    <Upload {...props}>
                     <Button icon={<UploadOutlined/>}>Select File</Button>
                 </Upload>
                 <Button
@@ -80,6 +82,7 @@ export default class UploadVideo extends React.Component {
                 >
                     {uploading ? 'Uploading' : 'Start Upload'}
                 </Button>
+                </div>
             </>
         );
     }

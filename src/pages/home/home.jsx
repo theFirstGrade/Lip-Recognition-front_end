@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import './home.less'
 import img1 from '../../res/images/img.png'
+import {BackTop} from 'antd';
 
 export default class Home extends Component {
 
@@ -8,8 +9,24 @@ export default class Home extends Component {
         console.log(123)
 
         return (
-            <div style={{margin: '20px auto', width: '30%'}}>
+            <div style={{margin: '20px auto', width: '40%'}}>
                 <span>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
                     <span className='title'>Guide</span>
                     <span className='content'>
                         the lip recognition system uses machine vision technology to continuously recognize the face from the image, judge the person who is talking, extract the continuous change characteristics of the person's mouth shape, then input the continuous change characteristics into the lip recognition model, recognize the pronunciation corresponding to the speech population type, and then calculate the natural language sentence with the greatest possibility according to the recognized pronunciation.
@@ -22,7 +39,9 @@ export default class Home extends Component {
                     </div>
                     <span className='title'>survey</span>
                     <span className="content">
-                        When the audio is damaged, audio visual recognition (AVR) is considered as another solution to complete the task of speech recognition. At the same time, it is also a visual recognition method used to verify the speaker in multi person scene. The method of AVR system is to use the information extracted from one mode to improve the recognition ability of another mode by filling in the missing information.
+                        When the audio is damaged, audio visual recognition (AVR) is considered as another solution to complete the task of speech recognition. At the same time, it is also a visual recognition method used to verify the speaker in multi person scene. The method of AVR system is to use the information extracted from one mode to improve the recognition ability of another mode by filling in the missing information. See <a
+                        href="https://paperswithcode.com/task/lipreading">https://paperswithcode.com/task/lipreading</a>
+
                     </span>
                     <span className='title'>problems and methods</span>
                     <span className="content">
@@ -32,12 +51,50 @@ export default class Home extends Component {
                     <span className="content">
                         The proposed architecture will combine temporal information and spatial information to effectively find the correlation between temporal information of different modes. Our method uses a relatively small network architecture and smaller data sets, and is superior to the existing audio-visual matching methods in performance, while the existing methods mainly use CNN to represent features. We also prove that the effective pair selection method can significantly improve the performance.
                     </span>
-                    
+
+                    <span className="title">Exploration</span>
                     <span className='content'>
-                        <span style={{marginRight:'6px'}}>find more:</span>
-                        <a href="https://zhuanlan.zhihu.com/p/48670591">https://zhuanlan.zhihu.com/p/48670591</a>
+                        <span style={{marginRight: '6px'}}>World Scientific:</span>
+                        <a href="https://www.worldscientific.com/doi/10.1142/S0218001418560074">https://www.worldscientific.com/doi/10.1142/S0218001418560074</a>
                     </span>
+                    <span className='content'>
+                        <span style={{marginRight: '6px'}}>Real-time lip reading system:</span>
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0031320310004516">https://www.sciencedirect.com/science/article/abs/pii/S003132031323</a>
+                    </span>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
                 </span>
+                <BackTop/>
             </div>
         );
     }

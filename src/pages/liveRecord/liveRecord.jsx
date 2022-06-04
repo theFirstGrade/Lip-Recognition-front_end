@@ -1,13 +1,24 @@
 import React, {Component} from "react";
+import {WebCamWebAPI} from "../../components/webCam/webCamera";
+import Camera from "../../components/webCam/camera";
 
 export default class LiveRecord extends Component {
 
     render() {
-        console.log(123)
-
         return (
-            <div style={{margin: '0 auto', width:' 30%'}}>
-                liveRecord
+            <div style={{margin: '15px auto', width: ' 80%'}}>
+                {/*  <WebCamWebAPI*/}
+                {/*    fileTypes={fileTypes}*/}
+                {/*    addFile={(imgObj) => {*/}
+                {/*        // this.handleApplyPhoto(imgObj);*/}
+                {/*    }}*/}
+                {/*    onClose={() => {*/}
+                {/*        this.setState({*/}
+                {/*            PhotoUploadVisible: false*/}
+                {/*        })*/}
+                {/*    }}*/}
+                {/*/>*/}
+                <Camera/>
             </div>
         );
     }
